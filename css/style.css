@@ -14,6 +14,7 @@ body {
 	font-size: 3rem;
 	text-align: center;
 	background-color: #E8E8E8;
+	color: #282828;
 }
 
 h1 {
@@ -104,6 +105,10 @@ ul {
 	opacity:1;
 }
 
+.headline {
+	font-weight: bold;
+}
+
 .logo {
 	position: fixed;
 	left: 14.5rem;
@@ -146,8 +151,23 @@ ul {
 }
 
 .title-sec {
-	height: 35rem;
-	width: 50rem;
+	height: 50rem;
+	width: 45rem;
+	font-size: 2.25rem;
+}
+
+.title-divider {
+	height:0.1em;
+	position: relative;
+	top: 0.5rem;
+	width: 10em;
+	margin: auto auto;
+	background-color: #3399CC;
+}
+
+.title-content {
+	position: relative;
+	top: 1.7rem;
 }
 
 #t1 {
@@ -219,12 +239,12 @@ ul {
 
 /*----------------------------------------  SLIDES  */
 
+
 .slide {
 	margin: 0 auto;
 	width: 99%;
 	padding: 120px 0;
 	padding: 12rem 0;
-	height: 40rem;
 }
 
 .title {
