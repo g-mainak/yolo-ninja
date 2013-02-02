@@ -137,6 +137,11 @@ code {
 	color: #282828;
 }
 
+.title-sec {
+	height: 35rem;
+	width: 50rem;
+}
+
 #t1 {
 	position: relative;
 	top: 15rem;
