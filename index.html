@@ -29,11 +29,15 @@
 	<div id="header">
 		<span class="logo">ZOO</span>
 		<div class="nav-menu">
-			<a href="#home" class="nav-button">Home</span></a>
-			<a href="#account" class="nav-button">Accounts</span></a>
-			<a href="#help" class="nav-button">Help</span></a>
-			<a href="#dsac" class="nav-button">DSAC</span></a>
+			<ul>
+				<a href="#home" class="nav-button">Home</span></a>
+				<a href="#help" class="nav-button">Help</span></a>
+				<a href="#account" class="nav-button">Account Request</span></a>
+				<a href="#dsac" class="nav-button">DSAC</span></a>
+			</ul>
+			<div class="scroll-indicator"></div>
 		</div>
+		
 	</div>
 
 	<div class="slide" id='home'>
@@ -172,6 +176,12 @@ $(document).ready(function() {
 	var deck = new $.scrolldeck({
 		buttons: '.nav-button',
 		easing: 'easeInOutExpo'
+	});
+
+	$(document).scroll(function(){
+		var pageHeight = $(window).height();
+		var percentScrolled = 100 * $(document).scrollTop()/($(document).height() - pageHeight);
+		$(".scroll-indicator").width(percentScrolled + "%");
 	});
 
 // add other animations using the scrolldeck.controller (see Scrollorama plugin)
