@@ -17,7 +17,12 @@
 
 	<script>
 	$(function() {
-		$( "#accordion" ).accordion({
+		$( "#accordion1" ).accordion({
+			collapsible: true
+		});
+	});
+	$(function() {
+		$( "#accordion2" ).accordion({
 			collapsible: true
 		});
 	});
@@ -29,11 +34,15 @@
 	<div id="header">
 		<span class="logo">ZOO</span>
 		<div class="nav-menu">
-			<a href="#home" class="nav-button">Home</span></a>
-			<a href="#account" class="nav-button">Accounts</span></a>
-			<a href="#help" class="nav-button">Help</span></a>
-			<a href="#dsac" class="nav-button">DSAC</span></a>
+			<ul>
+				<a href="#home" class="nav-button">Home</span></a>
+				<a href="#help" class="nav-button">Help</span></a>
+				<a href="#account" class="nav-button">Account Request</span></a>
+				<a href="#dsac" class="nav-button">DSAC</span></a>
+			</ul>
+			<div class="scroll-indicator"></div>
 		</div>
+		
 	</div>
 
 	<div class="slide" id='home'>
@@ -53,7 +62,7 @@ The Zoo is Yale University's Computer Science Department's undergraduate computi
 	
 
 	<div class="slide" id='account'>
-	<div id="accordion">
+	<div id="accordion1">
 		<h3>Getting and Maintaining Zoo Accounts</h3>
 		<div>
 			<p><small>To apply for a Zoo account, use the account request script. Your NetID will be your UserID on the zoo. Individuals who do not have a NetID must go to Workstation Support Services on the ground floor of AKW to have an account created manually. You should also use the account script to register the CS classes you&#39;re taking at the beginning of each semester. Doing so will ensure that the system adds you to the proper groups and creates the necessary working-directories in your home directory. It&#39;ll even archive your course-work for you at the end of the semester! You may register as often as necessary if you later decide to take additional courses. Registration data from the form is processed periodically by a Workstation Support staff member throughout the day. You will receive e-mail confirmation once your registration has been processed.Your Zoo account entitles you to, among other things, 60MB of space on Artemis, the central file server for the Zoo; a URL at which to publish HTML documents (see the Web Publishing section of this help system for more information); and a nice, comfy office swivel-chair (not to be removed from the Zoo!).Finally, make sure you read the Etiquette page to familiarize yourself with the rules and regs.
@@ -120,7 +129,7 @@ The Zoo is Yale University's Computer Science Department's undergraduate computi
 	</div>
 
 	<div class="slide" id='help'>
-	<div id="accordion">
+	<div id="accordion2">
 		<h3>Where we at?</h3>
 		<div><p><small>The Zoo is located on the third floor of Arthur K. Watson Hall (the Computer Science Department building) at 51 Prospect Street. One half of the Zoo is enclosed in Room AKW300, while the other half is in the third floor atrium.
 		The Zoo is open 24-hours a day, so if youre noctournal (like some of us) and thus do your best hacking at night, you need not be concerned. Just keep in mind that the door into AKW is locked on weekends and in the evenings on weekdays, so you will want to have your ID card validated for use with the scanner in order to enter the building during those times. Entrance to the closed portion of the Zoo (AKW300) also requires a swipe from a validated card. At the time of this writing (Fall 2002), Lori Hammel is in charge of ID card validations. Her desk is at the end of the right-hand hallway on the ground floor of AKW. Be sure to list all the areas of the building to which you will require access when you sign up for ID validation.
@@ -152,7 +161,7 @@ The Zoo is Yale University's Computer Science Department's undergraduate computi
 <div class="slide" id="dsac">
 <h2>DSAC</h2>
 <p>
-DSAC is the Computer Science Departmental Student Advisory Committee. DSAC consists of five undergraduate CS people who are each year either elected by popular vote or chosen through absolutist abridgement of the people&#39;s right to democracy--it&#39;s all the same, really.
+<small>DSAC is the Computer Science Departmental Student Advisory Committee. DSAC consists of five undergraduate CS people who are each year either elected by popular vote or chosen through absolutist abridgement of the people&#39;s right to democracy--it&#39;s all the same, really.
 This is DSAC:
 Attach:dsac.2009-2010.jpg?
 
@@ -165,7 +174,7 @@ Aayush Upadhyay BR &#39;14
 Here is the official DSAC Charter and DSAC Photo Album.
 Our primary task is to make sure the Zoo is a happy and functional place. To this end, we provide documentation and tips and techniques through our web server.
 In addition to making sure that the machines in the Zoo are functioning properly and that you don&#39;t have any problems using the Zoo facility, we are also involved in the CS Department. Feel free to come to us with any concerns or questions that you might have as a CS major.
-Read about DSACs of yore here.
+Read about DSACs of yore here.</small>
 </p>
 </div>
 
@@ -177,6 +186,12 @@ $(document).ready(function() {
 	var deck = new $.scrolldeck({
 		buttons: '.nav-button',
 		easing: 'easeInOutExpo'
+	});
+
+	$(document).scroll(function(){
+		var pageHeight = $(window).height();
+		var percentScrolled = 100 * $(document).scrollTop()/($(document).height() - pageHeight);
+		$(".scroll-indicator").width(percentScrolled + "%");
 	});
 
 // add other animations using the scrolldeck.controller (see Scrollorama plugin)
