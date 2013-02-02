@@ -114,11 +114,43 @@ code {
 	font-style: normal;
 }
 
+.divider {
+	height:0.1em;
+	position: relative;
+	top: 10rem;
+	width: 22em;
+	margin: auto auto;
+	background-color: #3399CC;
+}
+
 .nav-menu {
 	position: fixed;
 	right: 5rem;
 	top: 1rem;
 }
+
+.title-main {
+	position: relative;
+	top: 12rem;
+	margin-left: 6rem;
+	margin-right: 6rem;
+	color: #282828;
+}
+
+#t1 {
+	position: relative;
+	top: 15rem;
+	float: left;
+	margin-left: 10rem;
+}
+
+#t2 {
+	position: relative;
+	top: 15rem;
+	float: right;
+	margin-right: 10rem;
+}
+
 .nav-button {
 	padding: 10px;
 	padding: 1rem;
@@ -173,8 +205,14 @@ code {
 	height: 40rem;
 }
 
-#title {
+.title {
+	position: relative;
+	font-size: 8rem;
+	top: 5.5rem;
+	color: #282828;
 	line-height: .8;
+	padding-left: 10rem;
+	padding-right: 10rem;
 }
 
 #author {
